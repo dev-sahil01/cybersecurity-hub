@@ -1,30 +1,38 @@
-/* General body styles */
-body {
+/* Reset & Body */
+body, html {
     margin: 0;
+    padding: 0;
     font-family: 'Arial', sans-serif;
-    background: radial-gradient(circle at center, #0d0d0d 0%, #1a1a1a 100%);
     color: #fff;
-    text-align: center;
-    background-image: url('https://images.unsplash.com/photo-1602524200124-08b7c9aa6f3f?auto=format&fit=crop&w=1950&q=80'); /* sci-fi space background */
-    background-size: cover;
-    background-attachment: fixed;
+    overflow-x: hidden;
 }
 
-/* Overlay for better readability */
-body::before {
-    content: "";
+/* Sci-Fi Animated Background */
+.stars, .twinkling {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 30, 0.6);
-    z-index: -1;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: block;
+    z-index: -2;
 }
 
-/* Header styling */
+.stars {
+    background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat top center;
+    animation: moveStars 50s linear infinite;
+}
+
+.twinkling {
+    background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat top center;
+    animation: moveTwinkle 100s linear infinite;
+}
+
+@keyframes moveStars { from {background-position:0 0;} to {background-position:10000px 5000px;} }
+@keyframes moveTwinkle { from {background-position:0 0;} to {background-position:-10000px -5000px;} }
+
+/* Header */
 header {
     padding: 60px 20px;
+    text-align: center;
     background: rgba(0,0,0,0.6);
     box-shadow: 0 0 25px #00ffff;
 }
@@ -40,7 +48,7 @@ header p {
     color: #ff77ff;
 }
 
-/* Links section */
+/* Links Section */
 .links-section {
     margin: 50px 0;
 }
@@ -85,6 +93,39 @@ section h3 {
     margin-bottom: 15px;
 }
 
+/* Video Section */
+.video-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.video-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-container iframe {
+    border-radius: 15px;
+    box-shadow: 0 0 15px #00ffea;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-container iframe:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff00ff, 0 0 35px #00ffff;
+}
+
+.channel-name {
+    margin-top: 8px;
+    color: #ff77ff;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+}
+
 /* Footer */
 footer {
     padding: 20px;
@@ -92,4 +133,17 @@ footer {
     box-shadow: 0 -5px 25px #00ffff;
     font-size: 1.1em;
     color: #00ffff;
+    text-align: center;
 }
+footer {
+    padding: 10px;
+    background: rgba(2, 26, 36, 0.8);
+    box-shadow: 0 -5px 25px #00ffff;
+    font-size: 1em;
+    color: #00ffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
