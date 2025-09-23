@@ -1,112 +1,157 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity & Coding Hub</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cybersecurity & Coding Hub — Sahil</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Animated Sci-Fi Background -->
+  <!-- Animated background layers -->
+  <div class="bg-animated">
+    <div class="nebula"></div>
     <div class="stars"></div>
-    <div class="twinkling"></div>
+    <div class="gridlines"></div>
+  </div>
 
-    <header>
-        <h1>Cybersecurity & Coding Hub</h1>
-        <p>Learn Ethical Hacking and Programming Safely</p>
-    </header>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>Cybersecurity & Coding Hub</h1>
+      <p class="subtitle">Learn ethical hacking, programming & practical skills — safely and legally</p>
+    </div>
+  </header>
 
-    <main>
-        <!-- Platform Links -->
-        <section class="links-section">
-            <h2>Learning Platforms</h2>
-            <div class="links-container">
-                <a href="https://tryhackme.com" target="_blank">TryHackMe</a>
-                <a href="https://www.hackthebox.eu" target="_blank">Hack The Box</a>
-                <a href="https://overthewire.org" target="_blank">OverTheWire</a>
-                <a href="https://portswigger.net/web-security" target="_blank">PortSwigger Academy</a>
-                <a href="https://www.cybrary.it" target="_blank">Cybrary</a>
-                <a href="https://ctftime.org" target="_blank">CTF Platforms</a>
-            </div>
-        </section>
+  <main class="content">
+    <!-- Quick links -->
+    <section class="card links-card">
+      <h2>Learning Platforms</h2>
+      <div class="links-grid">
+        <a class="neon-btn" href="https://tryhackme.com" target="_blank" rel="noopener">TryHackMe</a>
+        <a class="neon-btn" href="https://www.hackthebox.eu" target="_blank" rel="noopener">Hack The Box</a>
+        <a class="neon-btn" href="https://overthewire.org" target="_blank" rel="noopener">OverTheWire</a>
+        <a class="neon-btn" href="https://portswigger.net/web-security" target="_blank" rel="noopener">PortSwigger Academy</a>
+        <a class="neon-btn" href="https://www.cybrary.it" target="_blank" rel="noopener">Cybrary</a>
+        <a class="neon-btn" href="https://ctftime.org" target="_blank" rel="noopener">CTFtime</a>
+      </div>
+    </section>
 
-        <!-- TryHackMe -->
-        <section id="tryhackme">
-            <h3>TryHackMe</h3>
-            <p>Guided labs and tutorials to learn hacking legally on virtual machines. Beginner-friendly with CTF-style challenges.</p>
-        </section>
+    <!-- Short descriptions -->
+    <section class="card desc-card">
+      <div>
+        <h3>Ethical Hacking & Security</h3>
+        <p>Practice in safe, legal environments (TryHackMe, HTB, OverTheWire). Always follow laws and only test systems you own or have permission for.</p>
+      </div>
 
-        <!-- Hack The Box -->
-        <section id="htb">
-            <h3>Hack The Box</h3>
-            <p>Learn penetration testing in safe, controlled environments with beginner to advanced machines.</p>
-        </section>
+      <div>
+        <h3>Programming & Tools</h3>
+        <p>Learn languages and tools used in cybersecurity: Python, C/C++, Web (HTML/CSS/JS), networking concepts, Linux basics, and more.</p>
+      </div>
+    </section>
 
-        <!-- OverTheWire -->
-        <section id="overthewire">
-            <h3>OverTheWire</h3>
-            <p>Free wargames teaching Linux, networking, and security skills safely and legally.</p>
-        </section>
+    <!-- Mid-page video section (responsive) -->
+    <section id="videos" class="card videos-card">
+      <h2>🎥 Coding & Learning Videos</h2>
+      <p class="muted">Embedded tutorials — responsive on mobile and desktop.</p>
 
-        <!-- Mid-page Video Section -->
-        <section id="videos">
-            <h3>Learn Coding with YouTube Videos</h3>
-            <p>Watch tutorials from top coding channels like "Harry Apna College"</p>
-            
-            <div class="video-container">
-                <!-- Python Video -->
-                <div class="video-box">
-                    <iframe width="350" height="200" 
-                        src="https://www.youtube.com/embed/KJgsSFOSQv0" 
-                        title="Python Tutorial" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                    <p class="channel-name">Channel: Programming with Mosh</p>
-                </div>
+      <div class="video-grid">
+        <!-- Code With Harry (C) -->
+        <div class="video-box">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/ER9SspLe4Hg"
+                    title="Code With Harry - C Programming Tutorial"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+          <p class="channel">Code With Harry</p>
+        </div>
 
-                <!-- JavaScript Video -->
-                <div class="video-box">
-                    <iframe width="350" height="200" 
-                        src="https://www.youtube.com/embed/_uQrJ0TkZlc" 
-                        title="JavaScript Tutorial" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                    <p class="channel-name">Channel: freeCodeCamp.org</p>
-                </div>
+        <!-- Apna College (C++) -->
+        <div class="video-box">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/tMrbN67U9d4"
+                    title="Apna College - Complete C++ Tutorial"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+          <p class="channel">Apna College</p>
+        </div>
 
-                <!-- C++ Video -->
-                <div class="video-box">
-                    <iframe width="350" height="200" src="https://www.youtube.com/embed/aZb0iu4uGwA?si=9_eH4usDNEIxkwTV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <p class="channel-name">Channel: code with harry</p>
-                </div>
+        <!-- freeCodeCamp (HTML Full Course) -->
+        <div class="video-box">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/UB1O30fR-EE"
+                    title="freeCodeCamp - HTML Full Course"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+          <p class="channel">freeCodeCamp</p>
+        </div>
 
-                <!-- Harry Apna College -->
-                <div class="video-box">
-                    <iframe width="350" height="200" src="https://www.youtube.com/embed/irqbmMNs2Bo?si=qsUQsyuZ1Oyzflw8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <p class="channel-name">Channel: Harry Apna College</p>
-                </div>
-            </div>
-        </section>
+        <!-- Telusko (Java) -->
+        <div class="video-box">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/eIrMbAQSU34"
+                    title="Telusko - Java Tutorial"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+          <p class="channel">Telusko</p>
+        </div>
 
-        <!-- CTF Platforms -->
-        <section id="ctf">
-            <h3>CTF Platforms</h3>
-            <p>Participate in legal cybersecurity competitions to practice your hacking skills safely.</p>
-        </section>
-    </main>
+        <!-- Programming with Mosh (Python/JS) -->
+        <div class="video-box">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/_uQrJ0TkZlc"
+                    title="Programming with Mosh - JavaScript / Python tutorial"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+          <p class="channel">Programming with Mosh</p>
+        </div>
 
-    <footer>
-        <footer>
-   
-    <p>© 2025 Sahil. All rights reserved.</p>
-     <p>Webpage developed by Sahil</p>
-</footer>
+        <!-- TheCherno (C++) -->
+        <div class="video-box">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/8Ext9G7xspg"
+                    title="TheCherno - C++ Tutorial"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+          <p class="channel">TheCherno</p>
+        </div>
+      </div>
+    </section>
 
-    </footer>
+    <!-- Cybersecurity video links (channels/playlists) -->
+    <section class="card cyber-card">
+      <h2>🔐 Cybersecurity Channels & Playlists</h2>
+      <p class="muted">Click to open the channel / playlist in YouTube (safer to open in new tab)</p>
+      <div class="links-grid">
+        <a class="neon-link" href="https://www.youtube.com/c/NetworkChuck" target="_blank" rel="noopener">NetworkChuck (Channel)</a>
+        <a class="neon-link" href="https://www.youtube.com/c/HackerSploit" target="_blank" rel="noopener">HackerSploit (Channel)</a>
+        <a class="neon-link" href="https://www.youtube.com/c/JohnHammond" target="_blank" rel="noopener">John Hammond (CTF & Forensics)</a>
+        <a class="neon-link" href="https://www.youtube.com/c/LiveOverflow" target="_blank" rel="noopener">LiveOverflow (Reverse/CTF)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>Webpage developed by Sahil</p>
+      <p>© 2025 Sahil. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
+
