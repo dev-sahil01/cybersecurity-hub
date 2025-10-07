@@ -263,7 +263,7 @@ body{
   .neon-btn{ padding:9px 12px; font-size:0.95rem }
   .video-grid{ gap:12px }
 }
-* Social media icons in footer */
+/* Social media icons in footer */
 .footer-inner .social-links {
   margin-top: 10px; /* space from text */
   display: flex;
@@ -286,9 +286,3 @@ body{
   transform: scale(1.2);
   opacity: 0.8;
 }
-;
-}
-
-
-
-
