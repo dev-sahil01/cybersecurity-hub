@@ -263,4 +263,26 @@ body{
   .neon-btn{ padding:9px 12px; font-size:0.95rem }
   .video-grid{ gap:12px }
 }
+/* Social media icons in footer */
+.footer-inner .social-links {
+  margin-top: 10px; /* space from text */
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 10px; /* space between icons */
+}
+
+.social-icon img {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.social-icon img:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+
 
