@@ -371,3 +371,25 @@ body{
 #send-btn:hover {
   background: #00bfff;
 }
+/* Chatbot Style Fix for Mobile */
+#chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  z-index: 9999;
+}
+
+/* Make chatbot smaller on phone */
+@media (max-width: 600px) {
+  #chatbot-container {
+    width: 90%;
+    height: 70%;
+    bottom: 10px;
+    right: 5%;
+  }
+}
