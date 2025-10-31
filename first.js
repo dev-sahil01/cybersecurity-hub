@@ -54,7 +54,7 @@ function appendMessage(text, sender) {
 function generateReply(msg) {
   msg = msg.toLowerCase();
   if (msg.includes("hello")) return "Hi there! 👋 How can I help you today?";
-  if (msg.includes("who are you")) return "I'm sahil's AI Assistant 🤖";
+  if (msg.includes("who are you")) return "I'm cyra sahil's AI Assistant 🤖";
   if (msg.includes("help")) return "Sure! I can answer coding or cybersecurity queries.";
   return "I'm still learning 🤓 — try asking me about coding, hacking, or AI!";
 }
@@ -70,3 +70,4 @@ if (chatbotToggle) {
         : "none";
   });
 }
+
