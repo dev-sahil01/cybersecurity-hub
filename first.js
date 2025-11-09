@@ -1,73 +1,27 @@
-// Toggle chat visibility
-const chatToggle = document.getElementById("chat-toggle");
-const chatContainer = document.getElementById("chatbot-container");
-const chatBox = document.getElementById("chat-box");
-const sendBtn = document.getElementById("send-btn");
-const userInput = document.getElementById("user-input");
+const API_KEY = "AIzaSyBh9Qie-ia-uE49Kog584CieYGDS2rob5g"; // paste your real key here
 
-// Keep original demo chatbot logic and add toggle behavior
-if (chatToggle) {
-  chatToggle.addEventListener("click", () => {
-    const isHidden = chatContainer.classList.contains("chat-hidden");
-    if (isHidden) {
-      chatContainer.classList.remove("chat-hidden");
-      chatContainer.setAttribute("aria-hidden", "false");
-      userInput.focus();
-    } else {
-      chatContainer.classList.add("chat-hidden");
-      chatContainer.setAttribute("aria-hidden", "true");
-    }
+async function sendMessageToAI(userMessage) {
+  const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=" + API_KEY;
+
+  const data = {
+    contents: [{ parts: [{ text: userMessage }] }]
+  };
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
   });
+
+  const result = await response.json();
+  return result.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I didn’t understand that.";
 }
 
-// original message handlers (kept intact)
-if (sendBtn && userInput) {
-  sendBtn.addEventListener("click", sendMessage);
-  userInput.addEventListener("keypress", e => {
-    if (e.key === "Enter") sendMessage();
-  });
+// Example usage inside your chatbot:
+async function handleUserInput() {
+  const userMessage = document.getElementById("user-input").value;
+  appendMessage("user", userMessage);
+
+  const botReply = await sendMessageToAI(userMessage);
+  appendMessage("bot", botReply);
 }
-
-function sendMessage() {
-  const msg = userInput.value.trim();
-  if (!msg) return;
-
-  appendMessage(msg, "user");
-  userInput.value = "";
-
-  // simulated reply
-  setTimeout(() => {
-    const botReply = generateReply(msg);
-    appendMessage(botReply, "bot");
-  }, 600);
-}
-
-function appendMessage(text, sender) {
-  const msgDiv = document.createElement("div");
-  msgDiv.classList.add("message", sender === "user" ? "user" : "bot");
-  msgDiv.textContent = text;
-  chatBox.appendChild(msgDiv);
-  chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-// Temporary AI reply generator (mock) — unchanged
-function generateReply(msg) {
-  msg = msg.toLowerCase();
-  if (msg.includes("hello")) return "Hi there! 👋 How can I help you today?";
-  if (msg.includes("who are you")) return "I'm cyra sahil's AI Assistant 🤖";
-  if (msg.includes("help")) return "Sure! I can answer coding or cybersecurity queries.";
-  return "I'm still learning 🤓 — try asking me about coding, hacking, or AI!";
-}
-// 🌐 Floating Chatbot Toggle
-const chatbotToggle = document.getElementById("chatbot-toggle");
-const chatbotContainer = document.getElementById("chatbot-container");
-
-if (chatbotToggle) {
-  chatbotToggle.addEventListener("click", () => {
-    chatbotContainer.style.display =
-      chatbotContainer.style.display === "none" || chatbotContainer.style.display === ""
-        ? "flex"
-        : "none";
-  });
-}
-
